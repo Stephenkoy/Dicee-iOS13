@@ -9,12 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // to add IB outlet you need to control drag.
+    
+    @IBOutlet weak var diceImageViewOne: UIImageView!
+    @IBOutlet weak var diceImageViewTwo: UIImageView!
+    
+    let imageArray = [ UIImage(named: "DiceOne"), UIImage(named: "DiceTwo"), UIImage(named: "DiceThree"), UIImage(named: "DiceFour"), UIImage(named: "DiceFive"), UIImage(named: "DiceSix")]
+    
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageViewOne.image = imageArray[Int.random(in: 0...5)]
+        diceImageViewTwo.image = imageArray[Int.random(in: 0...5)]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
 }
 
